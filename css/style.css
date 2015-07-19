@@ -39,16 +39,32 @@
 }
 
 #banner{
-    background:#5B8A22;
+
+    background-image: -webkit-linear-gradient(top, #619227, #87b821);
+    background-image: -moz-linear-gradient(top, #619227, #87b821);
+    background-image: -o-linear-gradient(top, #619227, #87b821);
+    background-image: -ms-linear-gradient(top, #619227, #87b821);
+    background-image: linear-gradient(to bottom, #619227, #87b821);
     height: 70px;
     border-radius: 4px 4px 0 0;
-    opacity: 0.95;
+
+    overflow: hidden;
+}
+
+#banner img:first-child{
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+#banner img:nth-child(2){
+    margin-top: -66px;
+
 }
 
 #forget{
     margin-top: 20px;
     margin-left: 32%;
-    font-size: 10;
+    font-size: 10px;
     color: #999;
 }
 

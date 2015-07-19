@@ -7,14 +7,17 @@
     <link rel="stylesheet" href="css/style_directory.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
 </head>
-<body ng-app="directoryApp" ng-controller="departmentsController">
+<body ng-app="directoryApp" ng-controller="companyCtrl">
 <header>
     <!--<img/>-->
     <div id="banner">
-
-        <p>Welcome username<br>
-            <a href="#">Logout</a>
-        </p>
+        <img src="images/logo.png"/>
+        <img src="images/banner.png" width="62%" height="86">
+        <div id="profile">
+            <p>Welcome %username<br>
+                <a href="#">Logout</a>
+            </p>
+        </div>
     </div>
     <nav>
         <ul>
@@ -27,138 +30,18 @@
 </header>
 <br><br>
 <section>
-    <div class="panel panel-default col-md-4 col-md-offset-1">
+    <div class="panel panel-default col-md-4 col-md-offset-1" ng-init="">
         <div class="panel-body">
             Companies
-            <input type="text" class="form-control input-sm panel_inputs" placeholder="Search a company...">
+            <input type="text" class="form-control input-sm panel_inputs" placeholder="Search a company..."
+                   ng-model="company">
 
             <div class="offset-col-sm-2 tableS">
-                <table class="table table-striped">
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
+                <table class="table table-striped table-hover">
+                    <tr ng-repeat="x in companies | filter:company">
+                        <td class="companyElement" ng-click="setDepartments(x);" onclick="setActive(this, 'company');">
+                            {{x.name}}
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -167,135 +50,15 @@
     <div class="panel panel-default col-md-2">
         <div class="panel-body">
             Departments
-            <input type="text" class="form-control input-sm panel_inputs" placeholder="Search a department...">
+            <input type="text" class="form-control input-sm panel_inputs" placeholder="Search a department..."
+                   ng-model="department">
 
             <div class="tableS">
-                <table class="table table-striped">
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
+                <table class="table table-striped table-hover">
+                    <tr ng-repeat="x in departments | filter:department">
+                        <td class="departmentElement" ng-click="setEmployees(x, $index)"
+                            onclick="setActive(this, 'department');">{{x.name}}
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -304,137 +67,15 @@
     <div class="panel panel-default col-md-2">
         <div class="panel-body">
             Employees
-            <input type="text" class="input-sm form-control panel_inputs" placeholder="Search an employee...">
+            <input type="text" class="input-sm form-control panel_inputs" placeholder="Search an employee..."
+                   ng-model="employee">
             <button class="btn btn-default btn-sm" id="newButton" data-toggle="modal" data-target="#myModal"><span
                     class="glyphicon glyphicon-plus-sign" style="color: blue;"></span> new
             </button>
             <div class="tableS">
-                <table class="table table-striped">
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
-                    </tr>
-                    <tr>
-                        <td>data1</td>
-                    </tr>
-                    <tr>
-                        <td>data2</td>
-                    </tr>
-                    <tr>
-                        <td>data3</td>
-                    </tr>
-                    <tr>
-                        <td>data4</td>
-                    </tr>
-                    <tr>
-                        <td>data5</td>
-                    </tr>
-                    <tr>
-                        <td>data6</td>
-                    </tr>
-                    <tr>
-                        <td>data7</td>
+                <table class="table table-striped table-hover">
+                    <tr ng-repeat="x in employees | filter:employee">
+                        <td class="employeeElement" ng-click="setActiveEmployee(x);" onclick="setActive(this, 'employee');">{{x.name}}</select></td>
                     </tr>
                 </table>
             </div>
@@ -442,15 +83,18 @@
     </div>
 </section>
 <section class="buttons">
-    <button class="btn btn-default btn-sm col-sm-offset-3" data-toggle="modal" data-target="#myModal2"><span
+    <button class="btn btn-default btn-sm col-sm-offset-3" data-toggle="modal" data-target="#myModal2"
+            ng-click="modalItem = 'company'"><span
             class="glyphicon glyphicon-remove-sign"
             style="color: red;"></span> Remove
     </button>
-    <button class="btn btn-default btn-sm col-md-offset-2"><span class="glyphicon glyphicon-remove-sign"
-                                                                 style="color: red;"></span> Remove
+    <button class="btn btn-default btn-sm col-md-offset-2" data-toggle="modal" data-target="#myModal2"
+            ng-click="modalItem = 'department'"><span class="glyphicon glyphicon-remove-sign"
+                                                      style="color: red;"></span> Remove
     </button>
-    <button class="btn btn-default btn-sm col-md-offset-2"><span class="glyphicon glyphicon-remove-sign"
-                                                                 style="color: red;"></span> Remove
+    <button class="btn btn-default btn-sm col-md-offset-2" data-toggle="modal" data-target="#myModal2"
+            ng-click="modalItem = 'employee'"><span class="glyphicon glyphicon-remove-sign"
+                                                    style="color: red;"></span> Remove
     </button>
 </section>
 <br><br>
@@ -469,7 +113,7 @@
                         <label for="inputName" class="col-sm-3 control-label">Name :</label>
 
                         <div class="col-sm-8">
-                            <input class="form-control" type="text" id="inputName">
+                            <input class="form-control" type="text" id="inputName" ng-model="name">
                         </div>
                     </div>
                     <div class="form-group form-group-sm">
@@ -515,12 +159,9 @@
                         <label for="inputCompany" class="col-sm-3 control-label">Company :</label>
 
                         <div class="col-sm-8">
-                            <select class="form-control" id="inputCompany">
-                                <option>company1</option>
-                                <option>company2</option>
-                                <option>company3</option>
-                                <option>company4</option>
-                                <option>company5</option>
+                            <select class="form-control" id="inputCompany" ng-model="companySelectedId"
+                                    ng-options="company.id  as company.name for company in companies"
+                                    ng-change="setDepartments(companies[companySelectedId-1])">
                             </select>
                         </div>
                     </div>
@@ -528,12 +169,8 @@
                         <label for="inputDepartment" class="col-sm-3 control-label">Department:</label>
 
                         <div class="col-sm-8">
-                            <select class="form-control" id="inputDepartment">
-                                <option>department1</option>
-                                <option>department2</option>
-                                <option>department3</option>
-                                <option>department4</option>
-                                <option>department5</option>
+                            <select class="form-control" id="inputDepartment" ng-model="departmentSelectedId"
+                                    ng-options="department.id  as department.name for department in departments">
                             </select>
                         </div>
                     </div>
@@ -553,22 +190,26 @@
                     </div>
                 </form>
                 <p>&nbsp;</br></br></br></p>
-                <button type="button" class="btn btn-default col-sm-offset-11" data-dismiss="modal">OK</button>
+                <button type="button" class="btn btn-default col-sm-offset-11" data-dismiss="modal"
+                        ng-click="addEmployee(companies[companySelectedId-1].name, departmentSelectedId, name);">OK
+                </button>
             </div>
         </div>
     </div>
 </div>
-<!-- Add Employee Modal -->
+<!-- Delete Employee Modal -->
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body">
                 <br>
+
                 <div class="col-sm-2">
                     <img src="images/img_attention.png" width="60" height="60" alt="warning"/>
                 </div>
                 <div class="col-sm-10">
-                    <p><strong>Are you sure you want to delete this item ?</strong><br>This action is irreversible</p>
+                    <p><strong>Are you sure you want to delete this {{modalItem}}?</strong><br>This action is
+                        irreversible</p>
 
                     <div class="checkbox">
                         <label>
@@ -579,14 +220,15 @@
             </div>
             <div class="modal-footer" style="clear: both; background: rgb(242, 242, 242);">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-default">Delete</button>
+                <button type="button" class="btn btn-default" ng-click="deleteItem(modalItem);">Delete</button>
             </div>
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 <script src="js/directoryApp.js"></script>
-<script src="js/departmentsController.js"></script>
+<script src="js/companyCtrl.js"></script>
 </body>
 </html>
