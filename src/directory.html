@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>People Directory</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_directory.css">
+    <link rel="stylesheet" media="screen" href="css/responsive-767px-max.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-route.js"></script>
+</head>
+<body ng-app="directoryApp" ng-controller="companyCtrl">
+<header>
+    <div id="banner">
+        <img src="images/logo.png"/>
+        <img src="images/banner.png" width="62%" height="86">
+        <div id="profile">
+            <p>Welcome %username<br>
+                <a href="#">Logout</a>
+            </p>
+        </div>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#/default" class="navListItem" onclick="setFocus(this);">Demo's home</a></li>
+            <li><a href="#/panels" class="navListItem focus" onclick="setFocus(this);">People Directory</a></li>
+            <li><a href="#/default" class="navListItem" onclick="setFocus(this);">Jobs manager</a></li>
+            <li><a href="#/default" class="navListItem" onclick="setFocus(this);">Statistics</a></li>
+        </ul>
+    </nav>
+</header>
+<br><br>
+<div class="main" ng-view></div>
+
+<footer>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/directoryApp.js"></script>
+<script src="js/panelsCtrl.js"></script>
+</body>
+</html>
