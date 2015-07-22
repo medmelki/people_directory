@@ -1,0 +1,164 @@
+@import "variables.less";
+@import "mixins.less";
+
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  width: 100%;
+  font-family: Calibri, sans-serif;
+  & > nav {
+    width: 100%;
+    height: 36px;
+    .boxShadowNavBar();
+    .gradientNavBarFocus();
+
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        height: 100%;
+        display: inline;
+        list-style: none;
+        margin-left: -2px;
+        a {
+          display: inline-block;
+          text-decoration: none;
+          font-size: 16px;
+          color: white;
+          line-height: 36px;
+          padding: 0 15px;
+          -webkit-border-radius: 0 0 3px 3px;
+          -moz-border-radius: 0 0 3px 3px;
+          border-radius: 0 0 3px 3px;
+          .boxShadowNavBar();
+          .gradientNavBar();
+        }
+      }
+      li:first-child {
+        a {
+          margin-left: 50px;
+        }
+      }
+    }
+  }
+}
+
+#banner {
+  width: 100%;
+  height: 85px;
+  .gradientNavBar();
+  text-decoration: none;
+  img:first-child {
+    margin-top: 15px;
+  }
+  img:nth-child(2) {
+    position: absolute;
+    left: 0;
+  }
+}
+
+#profile {
+  position: relative;
+  right: 5%;
+  top: -50%;
+  color: white;
+  font-size: 12px;
+  text-align: right;
+  p {
+    a {
+      text-decoration: underline;
+      color: white;
+    }
+  }
+}
+
+header & > nav ul li a:hover, a:visited {
+  text-decoration: none;
+  text-underline: none;
+  color: white;
+  .gradientNavBarFocus();
+}
+
+.focus {
+  .boxShadowNavBar();
+  .gradientNavBarFocus();
+}
+
+.panel {
+  width: 25%;
+  height: 715px;
+  & > button {
+    position: absolute;
+    left: 72%;
+    top: 725px;
+  }
+}
+
+.panel-default {
+  background: rgb(247, 247, 247);
+}
+
+.panel:not(:first-child) {
+  margin-left: 20px;
+}
+
+.tableS {
+  background: white;
+  overflow: auto;
+  border: solid thin rgb(207, 207, 207);
+  border-radius: 4px;
+  clear: both;
+  margin-bottom: 22px;
+  max-height: 90vh;
+}
+
+#myModal {
+  .modal-dialog {
+    width: 70%;
+    .modal-content {
+      border-radius: 0;
+      border: 10px solid rgb(242, 242, 242);
+    }
+  }
+}
+
+label {
+  text-align: left !important;
+}
+
+.panel_inputs {
+  width: 72% !important;
+  margin-bottom: 20px;
+  float: left;
+}
+
+#newButton {
+  float: left;
+  margin-left: 7px;
+}
+
+.mod_form {
+  & > p {
+    background-color: rgb(242, 242, 242);
+    font-weight: bold;
+  }
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 0 !important;
+}
+
+td {
+  border-top: none !important;
+}
+
+footer {
+  height: 200px;
+  clear: both;
+}

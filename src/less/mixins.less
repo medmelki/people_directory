@@ -1,0 +1,23 @@
+@import "variables.less";
+
+.gradientNavBar() {
+  background-image: -webkit-linear-gradient(bottom, @leftLightGreenGradientColor, @rightLightGreenGradientColor);
+  background-image: -moz-linear-gradient(bottom, @leftLightGreenGradientColor, @rightLightGreenGradientColor);
+  background-image: -o-linear-gradient(bottom, @leftLightGreenGradientColor, @rightLightGreenGradientColor);
+  background-image: -ms-linear-gradient(bottom, @leftLightGreenGradientColor, @rightLightGreenGradientColor);
+  background-image: linear-gradient(to top, @leftLightGreenGradientColor, @rightLightGreenGradientColor);
+}
+
+.gradientNavBarFocus() {
+  background-image: -webkit-linear-gradient(bottom, @focusLeftLightGreenGradientColor, @focusRightLightGreenGradientColor);
+  background-image: -moz-linear-gradient(bottom, @focusLeftLightGreenGradientColor, @rightLightGreenGradientColor);
+  background-image: -o-linear-gradient(bottom, @focusLeftLightGreenGradientColor, @rightLightGreenGradientColor);
+  background-image: -ms-linear-gradient(bottom, @focusLeftLightGreenGradientColor, @rightLightGreenGradientColor);
+  background-image: linear-gradient(to top, @focusLeftLightGreenGradientColor, @focusRightLightGreenGradientColor);
+}
+
+.boxShadowNavBar() {
+  -webkit-box-shadow: 0 1px 3px @navBoxShadowLR, inset 0 0 4px @navBoxShadowTD;
+  -moz-box-shadow: 0 1px 3px @navBoxShadowLR, inset 0 0 4px @navBoxShadowTD;
+  box-shadow: 0 1px 3px @navBoxShadowLR, inset 0 0 4px @navBoxShadowTD;
+}

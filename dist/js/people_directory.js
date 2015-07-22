@@ -1,3 +1,25 @@
+var app = angular.module('directoryApp', [
+    'ngRoute'
+]);
+
+app.config(['$routeProvider', function ($routeProvider) {
+    $routeProvider.
+        when('/default', {
+            templateUrl: 'partials/directory.default.html'
+        }).
+        when('/panels', {
+            templateUrl: 'partials/directory.panels.html',
+            controller: 'companyCtrl'
+        }).
+        when('/panels/:username', {
+            templateUrl: 'partials/directory.panels.html',
+            controller: 'companyCtrl'
+        }).
+        otherwise({
+            redirectTo: '/panels',
+            controller: 'companyCtrl'
+        });
+}]);;
 app.controller('companyCtrl', function ($scope, $http, $routeParams) {
 
     $scope.username = $routeParams.username;
@@ -87,5 +109,44 @@ app.controller('companyCtrl', function ($scope, $http, $routeParams) {
             }
         }
     };
+
+});
+;
+
+
+function setActive(that, category){
+    that.className += " info";
+    $('.'+ category + 'Element').not(that).removeClass("info");
+}
+
+function setFocus(that){
+    that.className += " focus";
+    $('.navListItem').not(that).removeClass("focus");
+}
+;
+var app1 = angular.module('indexApp', []);
+
+app1.controller('validateCtrl', function ($scope, $http) {
+
+    $scope.authentified = false;
+    $scope.link = '#';
+
+    $scope.authenticate = function () {
+
+        $http.get("http://localhost:8080/peopledirectory/rest/authentication" + "/" + $scope.login + "/" + $scope.password)
+            .success(function (response) {
+                if (response !== null) {
+                    $scope.authentified = true;
+                    $scope.username = response.username;
+                    if ($scope.username) {
+                        $scope.link = 'directory.html#/panels/' + $scope.username;
+                    }
+
+                }
+
+            });
+    };
+    $scope.authenticate.$inject = [$scope, '$http'];
+
 
 });

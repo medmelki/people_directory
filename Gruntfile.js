@@ -74,12 +74,17 @@ module.exports = function (grunt) {
         },
 
         concat: {
-            options: {
-                separator: ';'
-            },
-            dist: {
-                src: ['src/**/*.js'],
+
+            js: {
+                options: {
+                    separator: ";\n"
+                },
+                src: 'src/js/*.js',
                 dest: 'dist/js/<%= pkg.name %>.js'
+            },
+            css: {
+                src: 'src/css/*.css',
+                dest: 'dist/css/<%= pkg.name %>.css'
             }
         },
 
@@ -89,7 +94,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+                    'dist/js/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
                 }
             }
         },
@@ -131,7 +136,7 @@ module.exports = function (grunt) {
         },
 
         jshint: {
-            files: ['gruntfile.js', 'src/**/*.js'],
+            files: ['gruntfile.js', 'src/js/*.js', '!*.min.js'],
             options: {
                 globals: {
                     jQuery: true,
@@ -156,7 +161,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', ['jshint']);
 
-    grunt.registerTask('dev', ['less', 'watch']);
+    grunt.registerTask('dev', ['jshint', 'less', 'watch']);
 
     // full build for optimized version
     grunt.registerTask('default', ['less', 'jshint', 'clean', 'copy',

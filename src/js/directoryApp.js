@@ -11,6 +11,10 @@ app.config(['$routeProvider', function ($routeProvider) {
             templateUrl: 'partials/directory.panels.html',
             controller: 'companyCtrl'
         }).
+        when('/panels/:username', {
+            templateUrl: 'partials/directory.panels.html',
+            controller: 'companyCtrl'
+        }).
         otherwise({
             redirectTo: '/panels',
             controller: 'companyCtrl'

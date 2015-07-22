@@ -5,17 +5,17 @@
     <title>People Directory</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style_directory.css">
-    <link rel="stylesheet" media="screen" href="css/responsive-767px-max.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular-route.js"></script>
+    <link rel="stylesheet" media="screen" href="css/responsive_directory-480px-max.css"/>
+    <script src="lib/angular.js"></script>
+    <script src="lib/angular-route.js"></script>
 </head>
-<body ng-app="directoryApp" ng-controller="companyCtrl">
+<body ng-app="directoryApp" ng-controller="companyCtrl" ng-init="username='%username';">
 <header>
     <div id="banner">
         <img src="images/logo.png"/>
         <img src="images/banner.png" width="62%" height="86">
         <div id="profile">
-            <p>Welcome %username<br>
+            <p>Welcome {{username}}<br>
                 <a href="#">Logout</a>
             </p>
         </div>
@@ -34,10 +34,10 @@
 
 <footer>
 </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
+<script src="lib/jquery.js"></script>
+<script src="lib/bootstrap.js"></script>
 <script src="js/directoryApp.js"></script>
 <script src="js/panelsCtrl.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

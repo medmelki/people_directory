@@ -1,12 +1,12 @@
+app.controller('companyCtrl', function ($scope, $http, $routeParams) {
 
-app.controller('companyCtrl', function ($scope, $http) {
+    $scope.username = $routeParams.username;
 
     $http.get("http://localhost:8080/peopledirectory/rest/company/all")
         .success(function (response) {
             $scope.companies = response;
             $scope.setNextEmployeeId();
         });
-
 
 
     $scope.setDepartments = function (x) {
